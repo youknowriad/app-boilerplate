@@ -1,0 +1,12 @@
+{
+    "name": "app-boilerplate",
+    "version": "0.0.1",
+    "private": true,
+    "description": "A template for building, a fast realtime application with angular + nodejs + socket.io",
+    "dependencies": {
+        "socket.io": "latest",
+        "express": "latest",
+        "jade": "latest",
+        "mongoose": "latest"
+    }
+}
