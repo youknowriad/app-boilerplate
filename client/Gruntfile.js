@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
         // validate js files
         jshint: {
-            all: ['app/**/*.js']
+            all: ['app/**/*.js', 'angular-data/**/*.js']
         },
 
         // Less build
@@ -27,8 +27,8 @@ module.exports = function(grunt) {
                 files: [
                     {expand: true, cwd: 'app', src: ['index.html'], dest: 'public'},
                     {expand: true, cwd: 'app/partials', src: ['**'], dest: 'public/partials'},
-                    {expand: true, cwd: 'bower_components/semantic/build/fonts/*', src: ['**'], dest: 'public/fonts'},
-                    {expand: true, cwd: 'bower_components/semantic/build/images/*', src: ['**'], dest: 'public/images'}
+                    {expand: true, cwd: 'bower_components/semantic/build/less/fonts', src: ['**'], dest: 'public/fonts'},
+                    {expand: true, cwd: 'bower_components/semantic/build/less/images', src: ['**'], dest: 'public/images'}
                 ]
             }
         },
@@ -43,10 +43,14 @@ module.exports = function(grunt) {
 
             vendors: {
                 src: [
-                    'bower_components/semantic/build/less/**/*.js',
 
                     'bower_components/jquery/jquery.min.js',
                     'bower_components/angular/angular.min.js',
+
+                    'bower_components/semantic/build/less/**/*.js',
+
+                    'angular-data/module.js',
+                    'angular-data/**/*.js'
                 ],
                 dest: 'public/js/vendor.js'
             }
