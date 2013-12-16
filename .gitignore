@@ -1,3 +1,6 @@
+#IDE
+.idea
+
 client/bower_components
 client/node_modules
 client/public
