@@ -8,6 +8,8 @@
         "grunt-contrib-less": "*",
         "grunt-contrib-uglify": "*",
         "grunt-contrib-watch": "*",
-        "grunt-contrib-jshint": "*"
+        "grunt-contrib-jshint": "*",
+        "grunt-karma": "*",
+        "phantomjs": "*"
     }
 }
