@@ -54,8 +54,23 @@ module.exports = function(grunt) {
                 ],
                 dest: 'public/js/vendor.js'
             }
-        }
+        },
 
+        // tests
+        karma: {
+            options: {
+                configFile: 'karma.conf.js'
+            },
+            dev: {
+                browsers: ['Chrome', 'Firefox'],
+                reporters: ['dots']
+            },
+            ci: {
+                browsers: ['PhantomJS'],
+                reporters: ['dots'],
+                singleRun: true
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -64,7 +79,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('default', ['less', 'copy', 'concat', 'jshint']);
     grunt.registerTask('dev', ['less', 'copy', 'concat']);
+    grunt.registerTask('test', ['karma:dev']);
 };
