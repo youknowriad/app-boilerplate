@@ -15,7 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.0.8",
-    "semantic": "https://github.com/jlukic/Semantic-UI.git"
+    "angular": "*",
+    "angular-datastore": "*",
+    "semantic": "*"
   }
 }

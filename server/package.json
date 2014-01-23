@@ -4,9 +4,6 @@
     "private": true,
     "description": "A template for building, a fast realtime application with angular + nodejs + socket.io",
     "dependencies": {
-        "socket.io": "latest",
-        "express": "latest",
-        "jade": "latest",
-        "mongoose": "latest"
+        "bedoon": "latest"
     }
 }

@@ -2,9 +2,12 @@ module.exports = {
     db: 'mongodb://localhost/app-boilerplate',
     resources: {
         user: {
+            type: "document",
             schema: {
-                username: String,
-                password: String
+                attributes: {
+                    username: String,
+                    password: String
+                }
             }
         }
     }

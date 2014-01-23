@@ -1,20 +1,9 @@
 // Loading Config
+var Bedoon = require("bedoon");
 var config = require("../config/config");
 
 // Loading Express
-var express = require("express");
-var app = express();
+var bedoon = new Bedoon(config);
 var port = 3700;
-app.use(express.bodyParser());
-
-// Configuring the database
-var mongoose = require('mongoose');
-mongoose.connect(config.db);
-
-// Loading Resources
-var models = require("./loader/models")(config, mongoose);
-require("./loader/controllers")(config, app, models);
-
-// Lanching the application
-app.listen(port);
 console.log("Listening on port " + port);
+bedoon.app.listen(port);
