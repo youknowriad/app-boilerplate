@@ -1,5 +1,5 @@
 client/bower_components
 client/node_modules
-client/public
+public
 
 server/node_modules

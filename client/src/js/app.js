@@ -1,3 +1,4 @@
 angular.module('app-boilerplate', [
-    'angular-datastore'
+    'angular-datastore',
+    'ngRoute'
 ]);

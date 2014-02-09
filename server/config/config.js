@@ -1,15 +1,14 @@
 module.exports = {
+    prefix: 'api',
     db: 'mongodb://localhost/app-boilerplate',
     resources: {
 
         user: {
             type: "document",
             schema: {
-                attributes: {
-                    username: String,
-                    password: String
-                }
-            }
+                attributes: {}
+            },
+            user: true
         },
 
         post: {
@@ -38,8 +37,5 @@ module.exports = {
             }
         }
 
-    },
-    authentication: {
-        resource: 'user'
     }
 }

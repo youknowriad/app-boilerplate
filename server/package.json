@@ -4,6 +4,7 @@
     "private": true,
     "description": "A template for building, a fast realtime application with angular + nodejs + socket.io",
     "dependencies": {
-        "bedoon": "latest"
+        "bedoon": "latest",
+        "express": "latest"
     }
 }

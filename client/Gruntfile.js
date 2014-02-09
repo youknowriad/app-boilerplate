@@ -16,7 +16,7 @@ module.exports = function(grunt) {
                     yuicompress: true
                 },
                 files: {
-                    "public/css/main.css": "src/less/main.less"
+                    "../public/css/main.css": "src/less/main.less"
                 }
             }
         },
@@ -25,10 +25,8 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, cwd: 'src', src: ['index.html'], dest: 'public'},
-                    {expand: true, cwd: 'src/partials', src: ['**'], dest: 'public/partials'},
-                    {expand: true, cwd: 'bower_components/semantic/build/packaged/fonts/*', src: ['**'], dest: 'public/fonts'},
-                    {expand: true, cwd: 'bower_components/semantic/build/packaged/images/*', src: ['**'], dest: 'public/images'}
+                    {expand: true, cwd: 'src', src: ['index.html'], dest: '../public'},
+                    {expand: true, cwd: 'src/partials', src: ['**'], dest: '../public/partials'}
                 ]
             }
         },
@@ -37,35 +35,25 @@ module.exports = function(grunt) {
         concat: {
 
             application: {
-                src: ['app/**/*.js'],
-                dest: 'public/js/app.js'
+                src: [
+                    'src/js/app.js',
+                    'src/js/service/*.js',
+                    'src/js/controller/*.js',
+                    'src/js/*.js'
+                ],
+                dest: '../public/js/app.js'
             },
 
             vendors: {
                 src: [
-                    'bower_components/semantic/build/packaged/javascript/semantic.min.js',
-
                     'bower_components/jquery/jquery.min.js',
                     'bower_components/angular/angular.min.js',
-                ],
-                dest: 'public/js/vendor.js'
-            },
+                    'bower_components/angular-route/angular-route.min.js',
 
-            vendors_stylesheets: {
-                src: [
-                    'bower_components/semantic/build/packaged/css/semantic.min.css'
+                    'bower_components/angular-datastore/src/module.js',
+                    'bower_components/angular-datastore/src/**/*.js'
                 ],
-                dest: 'public/css/vendor.css'
-            }
-        },
-
-        connect: {
-            server: {
-                options: {
-                    port: 9001,
-                    base: 'public',
-                    keepalive: true
-                }
+                dest: '../public/js/vendor.js'
             }
         }
 
@@ -77,9 +65,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-connect');
 
     grunt.registerTask('default', ['less', 'copy', 'concat', 'jshint']);
     grunt.registerTask('dev', ['less', 'copy', 'concat']);
-    grunt.registerTask('server', ['connect']);
 };
